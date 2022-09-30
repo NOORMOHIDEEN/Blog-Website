@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for post in posts %}
+    <h3>Week {{post.week}}</h3>
+        <article class="media content-section">
+          
+          <div class="media-body">
+
+            <p class="article-content">Height: {{ post.height }}</p>
+            <p class="article-content">Weight: {{ post.weight }}</p>
+            <p class="article-content">Blood_pressure: {{ post.bld_ps }}</p>
+            <p class="article-content">Body Mass Index: {{arr[post.week-1]}}</p>
+          </div>
+        </article>
+    {% endfor %}
+
+{% endblock content %}

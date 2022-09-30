@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="height-section">
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">{{legend}}</legend>
+            <div class="form-group">
+                {{form.week.label(class="form-control-label")}}
+                {% if form.week.errors %}
+                {{form.week(class="form-control form-control-lg is-invalid ")}}
+                <div class="invalid-feedback">
+                    {% for error in form.week.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.week(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.height.label(class="form-control-label")}}
+                {% if form.height.errors %}
+                {{form.height(class="form-control form-control-lg is-invalid ")}}
+                <div class="invalid-feedback">
+                    {% for error in form.height.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                
+                {{form.height(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.weight.label(class="form-control-label")}}
+                {% if form.weight.errors %}
+                {{form.weight(class="form-control form-control-lg is-invalid ")}}
+                <div class="invalid-feedback">
+                    {% for error in form.weight.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.weight(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.bld_ps.label(class="form-control-label")}}
+                {% if form.bld_ps.errors %}
+                {{form.bld_ps(class="form-control form-control-lg is-invalid ")}}
+                <div class="invalid-feedback">
+                    {% for error in form.bld_ps.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.bld_ps(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            </br>
+            {{ form.submit(class="btn btn-outline-info")}}
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
